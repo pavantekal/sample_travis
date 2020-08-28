@@ -23,4 +23,4 @@ script:
   - echo $pwd
   # - npm run start:ci &
   # - npm run cy:run -- --record --parallel --group $STAGE_NAME
-  - npm run cy:run -- --spec "cypress/integration/simpletest.spec.js"
+  - npm run cy:run -- --spec "cypress/integration/examples/simpletest.spec.js"
