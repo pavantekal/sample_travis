@@ -1,4 +1,8 @@
 sudo: required
+language: node_js
+node_js:
+  - "14"
+  - "9"
 script:
   - npm install
   - npm run cy:run -- --record --spec "cypress/integration/simpletest.js"
