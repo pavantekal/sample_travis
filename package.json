@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Automation testing",
   "author": "Pavan Sreenivasa",
+  "scripts": {
+    "cy:run": "cypress run"
+  },
   "license": "ISC",
   "dependencies": {
     "cypress": "^5.0.0"
