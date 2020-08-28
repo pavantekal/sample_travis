@@ -2,10 +2,6 @@
   "name": "onehood_tests",
   "version": "1.0.0",
   "description": "Automation testing",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm test"
-  },
   "author": "Pavan Sreenivasa",
   "license": "ISC",
   "dependencies": {
