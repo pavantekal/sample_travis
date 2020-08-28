@@ -1,4 +1,4 @@
 sudo: required
 script:
-  - npm --version
+  - npm install --force
   - npm run cy:run -- --record --spec "cypress/integration/simpletest.js"
