@@ -2,7 +2,24 @@ sudo: required
 language: node_js
 node_js:
   - "14"
-  - "9"
+
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
+
+cache:
+  # cache both npm modules and Cypress binary
+  directories:
+    - ~/.npm
+    - ~/.cache
+  override:
+    - npm ci
+    - npm run cy:verify
+    - npm run cy:info
+
 script:
   - npm install
+  - npm run start:ci &
+  # - npm run cy:run -- --record --parallel --group $STAGE_NAME
   - npm run cy:run -- --record --spec "cypress/integration/simpletest.js"
