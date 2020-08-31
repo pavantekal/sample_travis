@@ -1,5 +1,5 @@
 describe("Example Test", () => {
-  it("Visits Thinkify website", () => {
+  it("Visits some website", () => {
     cy.visit("https://www.thinkify.io");
   });
 });
