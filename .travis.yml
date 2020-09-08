@@ -8,6 +8,9 @@ addons:
     packages:
       - libgconf-2-4
 
+services:
+  - docker
+
 cache:
   # cache both npm modules and Cypress binary
   directories:
@@ -17,6 +20,10 @@ cache:
     - npm ci
     - npm run cy:verify
     - npm run cy:info
+
+before_install:
+  - docker build -t pavantekal/docker_test .
+  - docker run -d -p 127.0.0.1:80:4567
 
 script:
   - npm install
