@@ -24,6 +24,10 @@ cache:
 before_install:
   - docker build -t pavantekal/docker_test .
   - docker run -d -p 127.0.0.1:80:4567 pavantekal/docker_test
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push pavantekal/docker_test
+
+after_success:
 
 script:
   - npm install
