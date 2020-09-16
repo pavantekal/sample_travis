@@ -22,6 +22,8 @@ cache:
     - npm run cy:info
 
 before_install:
+  - pip install --user awscli # install aws cli w/o sudo
+  - export PATH=$PATH:$HOME/.local/bin # put aws in the path
   - docker build -t pavantekal/docker_test .
   - docker run -d -p 127.0.0.1:80:4567 pavantekal/docker_test
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
