@@ -27,7 +27,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push pavantekal/docker_test
   - eval $(aws ecr get-login --region us-east-1)
-  - docker tag docker_test 786556925446.dkr.ecr.us-east-1.amazonaws.com/my-web-app
+  - docker tag pavantekal/docker_test 786556925446.dkr.ecr.us-east-1.amazonaws.com/my-web-app
   - docker push 786556925446.dkr.ecr.us-east-1.amazonaws.com/my-web-app
 
 after_success:
